@@ -31,7 +31,7 @@ const launchTerminal = () => {
 const makeFileWithTerminal = (fname: string) => () => {
   cy.get(".xterm-helper-textarea").click().type(`touch ${fname}{enter}`);
   cy.get("#filebrowser > .jp-Toolbar")
-    .find('button[title="Refresh the file browser."]')
+    .find('[title="Refresh the file browser."]')
     .click();
   cy.get("#filebrowser .jp-DirListing-content")
     .should("be.visible")
@@ -41,7 +41,7 @@ const makeFileWithTerminal = (fname: string) => () => {
 const removeFileWithTerminal = (fname: string) => () => {
   cy.get(".xterm-helper-textarea").click().type(`rm ${fname}{enter}`);
   cy.get("#filebrowser > .jp-Toolbar")
-    .find('button[title="Refresh the file browser."]')
+    .find('[title="Refresh the file browser."]')
     .click();
   cy.get("#filebrowser .jp-DirListing-content")
     .should("be.visible")
